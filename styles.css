@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: blue; /* Cambiamos el fondo a azul */
+    color: white; /* Cambiamos el color del texto a blanco */
+}
+
+h1 {
+    color: white; /* Cambiamos el color del título a blanco */
+}
+
+button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white; /* Cambiamos el fondo del botón a blanco */
+    color: blue; /* Cambiamos el color del texto del botón a azul */
+}
