@@ -28,6 +28,8 @@ printf($coste_kwh);
 printf($consumo_litros);
 printf($coste_litro);
 
+die();
+
 
 
 /* // Datos de conexión a la base de datos
