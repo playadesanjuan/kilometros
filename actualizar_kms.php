@@ -1,4 +1,35 @@
 <?php
+
+$aux= Lee_Configuracion ("configuracion.txt");
+
+// Produccion
+
+ //include("configuracion_server.txt");
+
+ //$aux= Lee_Configuracion ("configuracion_server.txt");
+
+
+$bateria=$aux[0];
+$bateria = preg_replace("[\n|\r|\n\r]", "", $bateria);
+
+$coste_kwh=$aux[1];
+$coste_kwh = preg_replace("[\n|\r|\n\r]", "", $coste_kwh);
+
+
+$consumo_litros=$aux[2];
+$consumo_litros = preg_replace("[\n|\r|\n\r]", "", $consumo_litros);
+
+
+$coste_litro=$aux[3];
+$coste_litro = preg_replace("[\n|\r|\n\r]", "", $coste_litro);
+
+printf($bateria);
+printf($coste_kwh);
+printf($consumo_litros);
+printf($coste_litro);
+
+
+
 /* // Datos de conexión a la base de datos
 $host = "localhost";
 $usuario = "root";
