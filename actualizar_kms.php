@@ -4,9 +4,12 @@
 // Produccion
 
  include("configuracion.txt");
+ include("funciones_comunes.php");
+
 
  $aux= Lee_Configuracion ("configuracion.txt");
 
+echo "ya lei la configuracion";
 
 $bateria=$aux[0];
 $bateria = preg_replace("[\n|\r|\n\r]", "", $bateria);
