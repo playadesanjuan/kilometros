@@ -6,6 +6,8 @@
  include("configuracion.txt");
  include("funciones_comunes.php");
 
+ echo "no lei la configuracion";
+ die();
 
  $aux= Lee_Configuracion ("configuracion.txt");
 
