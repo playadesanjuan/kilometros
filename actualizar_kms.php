@@ -1,12 +1,11 @@
 <?php
 
-$aux= Lee_Configuracion ("configuracion.txt");
 
 // Produccion
 
- //include("configuracion_server.txt");
+ include("configuracion.txt");
 
- //$aux= Lee_Configuracion ("configuracion_server.txt");
+ $aux= Lee_Configuracion ("configuracion.txt");
 
 
 $bateria=$aux[0];
