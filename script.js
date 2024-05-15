@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const resultado = calcular(kilometros, bateria);
-        document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
+        document.getElementById('resultado').textContent = `CARGAR LA BATERIA: ${resultado}`;
     });
 });
 
