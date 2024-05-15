@@ -30,7 +30,7 @@ function calcular(kilometros, bateria) {
     const coste_electricidad = bateria_maxima * (bateria/100) * precio_kwh;
 
     if (coste_gasolina > coste_electricidad){
-        cargar = "carga la bateria"";
+        cargar = "carga la bateria";
     }
    
     return cargar;
