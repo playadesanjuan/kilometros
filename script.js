@@ -24,16 +24,15 @@ function calcular(kilometros, bateria) {
     const consumo_medio_gasolina = 8.5;
     const precio_litro = 1.7;
 
-    const cargar = false;
+ 
+    // Coste de gasolina para los kilómetros indicados
+    const coste_gasolina = (consumo_medio_gasolina * precio_litro) * (kilometros / 100);
+    
+    // Coste de cargar la batería según el porcentaje de batería restante
+    const coste_electricidad = bateria_maxima * (bateria / 100) * precio_kwh;
 
-    const coste_gasolina = (consumo_medio_gasolina * precio_litro)*(kilometros/100);
-    const coste_electricidad = bateria_maxima * (bateria/100) * precio_kwh;
-
-    if (coste_gasolina > coste_electricidad){
-        cargar = true;
-    } else {
-        cargar = false;
-    }
+    // Determinar si es más económico cargar la batería
+    const cargar = coste_gasolina > coste_electricidad;
    
     return cargar;
 }
