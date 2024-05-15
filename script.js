@@ -31,6 +31,8 @@ function calcular(kilometros, bateria) {
 
     if (coste_gasolina > coste_electricidad){
         cargar = true;
+    } else {
+        cargar = false;
     }
    
     return cargar;
