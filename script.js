@@ -24,13 +24,13 @@ function calcular(kilometros, bateria) {
     const consumo_medio_gasolina = 8.5;
     const precio_litro = 1.7;
 
-    const cargar = false;
+    const cargar = "NO cargues la bateria";
 
     const coste_gasolina = (consumo_medio_gasolina * precio_litro)*(kilometros/100);
-    const coste_electricidad = bateria_maxima * bateria * precio_kwh;
+    const coste_electricidad = bateria_maxima * (bateria/100) * precio_kwh;
 
     if (coste_gasolina > coste_electricidad){
-        cargar = true;
+        cargar = "carga la bateria"";
     }
    
     return cargar;
