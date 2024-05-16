@@ -20,6 +20,7 @@ function calcular(kilometros, bateria) {
     // Configuracion:
     
     const bateria_maxima = 13.5;
+    const kms_maximos_con_bateria= 40;
     const precio_kwh = 0.06;
     const consumo_medio_gasolina = 8.5;
     const precio_litro = 1.7;
@@ -28,8 +29,12 @@ function calcular(kilometros, bateria) {
     // Coste de gasolina para los kilómetros indicados
     const coste_gasolina = (consumo_medio_gasolina * precio_litro) * (kilometros / 100);
     
-    // Coste de cargar la batería según el porcentaje de batería restante
-    const coste_electricidad = bateria_maxima * (bateria / 100) * precio_kwh;
+    // coste kms recorridos en electrico
+
+    const coste_kms_en_electrico = kilometros * ((bateria_maxima * precio_kwh) / kms_maximos_con_bateria);
+
+    // Coste de cargar la batería según el porcentaje de batería restante + el coste de los kms en electrico
+    const coste_electricidad = (bateria_maxima * (bateria / 100) * precio_kwh) + coste_kms_en_electrico;
 
     // Determinar si es más económico cargar la batería
     const cargar = coste_gasolina > coste_electricidad;
