@@ -1,4 +1,4 @@
-13,5
-0,06
-8.5
-1,7
+kms_maximos_con_bateria= 40;
+precio_kwh = 0.06;
+consumo_medio_gasolina = 8.5;
+precio_litro = 1.7;
