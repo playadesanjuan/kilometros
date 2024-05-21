@@ -19,13 +19,9 @@ function leerConfiguracion(callback) {
                 const [key, value] = line.split('=');
                 if (key === 'kms_maximos_con_bateria') {
                     kms_maximos_con_bateria = parseFloat(value.trim());
-                } else if (key === 'precio_kwh') {
-                    precio_kwh = parseFloat(value.trim());
                 } else if (key === 'consumo_medio_gasolina') {
                     consumo_medio_gasolina = parseFloat(value.trim());
-                } else if (key === 'precio_litro') {
-                    precio_litro = parseFloat(value.trim());
-                }
+                } 
             });
             callback();
         })
@@ -64,9 +60,11 @@ leerConfiguracion(() => {
         event.preventDefault();
         
         const kilometros = parseFloat(document.getElementById('kilometros').value);
+        const precio_litro = parseFloat(document.getElementById('litro').value);
         const bateria = parseFloat(document.getElementById('bateria').value);
+        const precio_kwh = parseFloat(document.getElementById('kwh').value);
 
-        if (isNaN(kilometros) || isNaN(bateria)) {
+        if (isNaN(kilometros) || isNaN(precio_litro) || isNaN(bateria) || isNaN(precio_kwh)) {
             alert("Por favor, introduce valores válidos.");
             return;
         }
