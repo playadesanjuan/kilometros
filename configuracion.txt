@@ -1,2 +1,0 @@
-kms_maximos_con_bateria=40
-consumo_medio_gasolina=8.5
