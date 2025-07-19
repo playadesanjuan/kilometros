@@ -51,7 +51,7 @@
     <input type="number" step="0.01" name="precio_total" required>
 
     <label>Empresa recarga total:</label>
-    <input type="text" name="Empresa recarga" required>
+    <input type="text" name="empresa_recarga" required>
 
     <button type="submit">Guardar carga</button>
   </form>
@@ -65,7 +65,7 @@
       e.preventDefault();
       const datos = new FormData(form);
 
-      fetch('https://script.google.com/macros/s/AKfycbxluLRiA0n3gE5lNCw2kV5AqWMmkXR9d3ETbCurDrlaVzgE0Nt0Fjk-i0R6kKTzG4pK/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbzjzCLEFO8I0jH4D5vv7FRTgmz0IuueKTVrC8j0Ej55sWNVKIUmL1OT3PGgA7CViBPK/exec', {
         method: 'POST',
         body: datos
       })
