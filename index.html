@@ -2,6 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1976D2">
+ <link rel="manifest" href="manifest.json">
+ <link rel="apple-touch-icon" href="icon-192.png">
   <title>Registro de cargas coche</title>
   <style>
     body {
@@ -41,6 +45,13 @@
     }
   </style>
 </head>
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log("Service Worker registrado"))
+    .catch(err => console.log(err));
+}
+</script>
 <body>
   <h2>Registro de Cargas</h2>
   <form id="cargas-form">
