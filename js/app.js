@@ -14,6 +14,8 @@ function iniciar() {
         .getElementById("cargas-form")
         .addEventListener("submit", guardar);
 
+    Navegacion.iniciar();
+
 }
 
 async function guardar(e) {
