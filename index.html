@@ -46,58 +46,154 @@
   </style>
 </head>
 <body>
-  <h2>Registro de Cargas</h2>
-  <form id="cargas-form">
-    <label>Carga kw:</label>
-    <input id="carga_kw" name="carga_kw" type="number" step="0.01" required>
 
-    <label>Precio total:</label>
-    <input id="precio_total" name="precio_total" type="number" step="0.01" required>
+<header>
 
-    <label>Empresa recarga total:</label>
-    <input type="text" name="empresa_recarga" required>
+    <h1>⚡ Cargas VE</h1>
 
-    <div class="resultado">
+    <p>Registro inteligente de recargas</p>
 
-    <span>Precio medio</span>
+</header>
 
-    <strong id="precio_kwh">--</strong>
+<div class="container">
 
-    </div>
+    <!-- INICIO -->
 
-    <button id="btnGuardar" type="submit">
-    Guardar carga
-    </button>
+    <section id="pantallaInicio" class="pantalla activa">
 
-  <script>
-    const form = document.getElementById('cargas-form');
-    const mensaje = document.getElementById('mensaje');
+        <div class="card">
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const datos = new FormData(form);
+            <h2>Nueva carga</h2>
 
-      fetch('https://script.google.com/macros/s/AKfycbzp_2bfW2kT9GjOqrx3XYtieyGUXoi9FzP-We8NEdJnEs1KkToKtThmpKCxp6-xXb1T/exec', {
-        method: 'POST',
-        body: datos
-      })
-      .then(res => res.text())
-      .then(data => {
-        mensaje.textContent = "✅ Carga guardada correctamente";
-        form.reset();
-      })
-      .catch(error => {
-        mensaje.textContent = "❌ Error al guardar: " + error.message;
-      });
-    });
-  </script>
-  <script>
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-    .then(() => console.log("Service Worker registrado"))
-    .catch(err => console.log(err));
-}
-</script>
+            <form id="cargas-form">
+
+                <label>Energía (kWh)</label>
+
+                <input id="carga_kw"
+                       name="carga_kw"
+                       type="number"
+                       step="0.01"
+                       required>
+
+                <label>Precio (€)</label>
+
+                <input id="precio_total"
+                       name="precio_total"
+                       type="number"
+                       step="0.01"
+                       required>
+
+                <label>Empresa</label>
+
+                <select
+                    id="empresa_recarga"
+                    name="empresa_recarga">
+
+                    <option>Iberdrola</option>
+                    <option>Zunder</option>
+                    <option>Tesla</option>
+                    <option>Ionity</option>
+                    <option>Endesa</option>
+                    <option>Repsol</option>
+                    <option>Wenea</option>
+
+                </select>
+
+                <div class="resultado">
+
+                    <span>Precio por kWh</span>
+
+                    <strong id="precio_kwh">--</strong>
+
+                </div>
+
+                <button
+                    id="btnGuardar"
+                    type="submit">
+
+                    Guardar carga
+
+                </button>
+
+            </form>
+
+            <div id="mensaje" class="mensaje"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HISTORIAL -->
+
+    <section id="pantallaHistorial" class="pantalla">
+
+        <div class="card">
+
+            <h2>Historial</h2>
+
+            <div id="historial">
+
+                Próximamente...
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ESTADISTICAS -->
+
+    <section id="pantallaEstadisticas" class="pantalla">
+
+        <div class="card">
+
+            <h2>Estadísticas</h2>
+
+            <div id="estadisticas">
+
+                Próximamente...
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PLANIFICADOR -->
+
+    <section id="pantallaPVPC" class="pantalla">
+
+        <div class="card">
+
+            <h2>Planificador</h2>
+
+            <div>
+
+                Próximamente...
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+<nav>
+
+    <a id="menuInicio" class="active">🏠<br>Inicio</a>
+
+    <a id="menuHistorial">📜<br>Historial</a>
+
+    <a id="menuEstadisticas">📊<br>Estadísticas</a>
+
+    <a id="menuPVPC">⚡<br>PVPC</a>
+
+</nav>
 
 <script src="js/config.js"></script>
 <script src="js/calculos.js"></script>
