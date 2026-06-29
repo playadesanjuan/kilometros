@@ -31,12 +31,13 @@ const Historial = {
                 return;
 
             }
+        const fragment = document.createDocumentFragment();
 
-            datos.forEach(carga => {
+        datos.forEach(carga => {
+                fragment.appendChild(this.crearTarjeta(carga));
+});
 
-                historial.appendChild(this.crearTarjeta(carga));
-
-            });
+        historial.appendChild(fragment);
 
         }
         catch (e) {
