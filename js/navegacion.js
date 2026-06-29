@@ -20,24 +20,28 @@ const Navegacion = {
 
     },
 
-    ir(nombre) {
+    ir(nombre){
 
-        document
-            .querySelectorAll(".pantalla")
-            .forEach(p=>p.classList.remove("activa"));
+document
+.querySelectorAll(".pantalla")
+.forEach(p=>p.classList.remove("activa"));
 
-        document
-            .querySelectorAll("nav a")
-            .forEach(p=>p.classList.remove("active"));
+document
+.querySelectorAll("nav a")
+.forEach(p=>p.classList.remove("active"));
 
-        document
-            .getElementById("pantalla"+nombre)
-            .classList.add("activa");
+document
+.getElementById("pantalla"+nombre)
+.classList.add("activa");
 
-        document
-            .getElementById("menu"+nombre)
-            .classList.add("active");
+document
+.getElementById("menu"+nombre)
+.classList.add("active");
 
-    }
+if(nombre=="Historial"){
+
+    Historial.cargar();
+
+}
 
 }
