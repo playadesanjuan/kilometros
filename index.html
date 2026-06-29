@@ -7,43 +7,9 @@
  <link rel="manifest" href="manifest.json">
  <link rel="apple-touch-icon" href="icon-192.png">
   <title>Registro de cargas coche</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 400px;
-      margin: 40px auto;
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #f2f2f2;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px;
-      width: 100%;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      font-size: 16px;
-      border-radius: 5px;
-    }
-    .mensaje {
-      margin-top: 20px;
-      color: green;
-      font-weight: bold;
-      text-align: center;
-    }
-  </style>
+
+<link rel="stylesheet" href="css/estilos.css">
+  
 </head>
 <body>
 
@@ -189,7 +155,14 @@
     <a id="menuPVPC">⚡<br>PVPC</a>
 
 </nav>
+<script>
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+}
+
+</script>
+  
 <script src="js/config.js"></script>
 <script src="js/calculos.js"></script>
 <script src="js/api.js"></script>
