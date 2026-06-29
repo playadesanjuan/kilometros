@@ -1,17 +1,25 @@
-const API = {
+const API={
 
-    async guardarCarga(datos) {
+    async guardarCarga(datos){
 
-        const respuesta = await fetch(Config.API_URL, {
+        const respuesta=await fetch(Config.API_URL,{
 
-            method: "POST",
+            method:"POST",
 
-            body: datos
+            body:datos
 
         });
 
         return await respuesta.text();
 
+    },
+
+    async obtenerHistorial(){
+
+        const respuesta=await fetch(Config.API_URL);
+
+        return await respuesta.json();
+
     }
 
-};
+}
