@@ -45,3 +45,4 @@ if(nombre=="Historial"){
 }
 
 }
+}; 
