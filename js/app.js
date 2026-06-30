@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", iniciar);
 
 function iniciar() {
 
+    Navegacion.iniciar();
+    
     document
         .getElementById("carga_kw")
         .addEventListener("input", Calculos.actualizarPrecio);
@@ -14,9 +16,7 @@ function iniciar() {
         .getElementById("cargas-form")
         .addEventListener("submit", guardar);
 
-    Navegacion.iniciar();
-
-}
+   }
 
 async function guardar(e) {
 
